@@ -1,0 +1,3 @@
+pseudo selectores css
+consultar sobre atomic design
+consultar sobre css grid layout
