@@ -25,6 +25,11 @@
     scroll-behavior: smooth;
     padding: 0;
     margin: 0;
+
+}
+
+input {
+    outline: none;
 }
 
 img {
@@ -37,9 +42,16 @@ a {
     color: inherit;
     font-family: var(--font-text);
 }
+
 /* Reset CSS */
 
 /* Components */
+
+button {
+    background-color: none;
+    border: none;
+    color: inherit;
+}
 
 .btn {
     padding: .625rem 2rem;
@@ -53,6 +65,11 @@ a {
     justify-content: center;
     gap: .625rem;
 
+    &:hover {
+        background-color: black;
+        opacity: 0.8;
+    }
+
     & span {
         font-size: 16px;
         margin-bottom: -3px;
@@ -64,7 +81,8 @@ a {
 }
 
 /* Components - inputs */
-input, select {
+input,
+select {
     padding: 16px 19px;
     border-radius: 100px;
     border: none;
@@ -75,6 +93,11 @@ input, select {
     &[type="submit"] {
         background-color: #4391f0;
         color: var(--light-color);
+
+        &:hover {
+            background-color: #4391f0;
+            opacity: 0.8;
+        }
     }
 }
 
@@ -91,37 +114,49 @@ input, select {
 
 /* Fonts */
 
-h1, .h1 {
+h1,
+.h1 {
     font: 400 clamp(3rem, 5vw, 4rem) var(--font-titles);
     color: var(--color-text);
 }
 
-h2, .h2 {
+h2,
+.h2 {
     font: 400 clamp(1.5rem, 5vw, 2rem) var(--font-titles);
     color: var(--color-text);
 }
 
-h3, .h3 {
+h3,
+.h3 {
     font: 400 clamp(1.1875rem, 5vw, 1.5rem) var(--font-titles);
     color: var(--color-text);
 }
 
-h4, .h4 {
+h4,
+.h4 {
     font: 500 clamp(1.0625rem, 5vw, 1.1875rem) var(--font-text);
     color: var(--color-text);
 }
 
-p, .p, label {
+p,
+.p,
+label {
     font: 400 .9375rem var(--font-text);
 }
 
-a .link, li {
+a .link,
+li {
     font: 500 .9375rem var(--font-text);
     text-decoration: none;
 }
 
+.link:hover {
+    color: var(--color-text);
+    opacity: 0.8;
+}
+
 /* Header */
-.header{
+.header {
     padding: clamp(1rem, 5vw, 2rem);
     display: flex;
     justify-content: space-between;
@@ -129,7 +164,7 @@ a .link, li {
     margin: 0 auto;
 }
 
-.header__logo{
+.header__logo {
     max-width: 5.75rem;
 }
 
@@ -138,20 +173,21 @@ a .link, li {
     list-style: none;
     gap: 32px;
     font-family: var(--font-text);
-
-    @media (max-width: 720px) {
-        display: none; 
-    }
 }
 
 .header__menu span {
     @media (min-width: 720px) {
-        display: none; 
+        display: none;
     }
 }
 
 .header__link a {
     color: var(--color-text);
+    opacity: 50%;
+
+    &[href="#"] {
+        opacity: 100%;
+    }
 }
 
 /* Hero banner */
@@ -181,28 +217,24 @@ a .link, li {
     color: var(--color-text);
 }
 
-.hero-banner__block h1, .hero-banner__block h4 {
+.hero-banner__block h1,
+.hero-banner__block h4 {
     color: var(--light-color);
 }
 
 /* icon section */
 
-.icon-cards__block{
+.icon-cards__block {
     display: flex;
     flex-flow: row wrap;
-    gap: 1rem;
 }
 
-.icon-card{
+.icon-card {
     flex: 1 1 150px;
     padding: 1rem;
     display: flex;
     flex-flow: column nowrap;
     gap: 1rem;
-}
-
-.icon-card__contact {
-    background-color: var(--light-color);
 }
 
 .icon-cards__title {
@@ -332,14 +364,19 @@ a .link, li {
     gap: 16px;
 
     &.middle_style {
-        
-        & h3, span {
+
+        & h3,
+        span {
             color: var(--light-color);
         }
 
         & a {
             background-color: var(--light-color);
             color: var(--color-text);
+
+            & span {
+                color: var(--color-text);
+            }
         }
 
     }
@@ -379,11 +416,10 @@ a .link, li {
 
 .contact__map {
     flex: 2 1 300px;
-    
+
     & iframe {
         width: 100%;
         height: 100%;
-        filter: grayscale(1)
     }
 }
 
@@ -444,7 +480,7 @@ form {
     display: flex;
     flex-flow: column nowrap;
     gap: 16px;
-    
+
     & a {
         color: var(--color-text);
     }
@@ -453,6 +489,7 @@ form {
         border-radius: 5px;
     }
 }
+
 /* End latest Section */
 
 /* Footer */
@@ -482,7 +519,7 @@ form {
     align-items: center;
 
     & ul a i {
-        font-family: var(--font-text); 
+        font-family: var(--font-text);
     }
 }
 
@@ -496,7 +533,7 @@ form {
 .footer__links {
     list-style: none;
     display: flex;
-    flex-flow:  row nowrap;
+    flex-flow: row nowrap;
     gap: 18px;
     padding: 16px 0;
     opacity: 0.8;
@@ -531,7 +568,7 @@ form {
         background-image: linear-gradient(rgba(31, 31, 31, 0.8), rgba(31, 31, 31, 0.8)), url(../media/News-banner.webp);
     }
 
-    &.banner-contact{
+    &.banner-contact {
         background-image: linear-gradient(rgba(31, 31, 31, 0.8), rgba(31, 31, 31, 0.8)), url(../media/Contact-banner.webp);
     }
 }
@@ -576,6 +613,36 @@ form {
         color: var(--light-color);
     }
 }
+
+@media (max-width: 720px) {
+    .header__menu ul {
+        display: none;
+    }
+
+    .header__menu.active ul {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+        background-color: var(--light-color);
+
+        & li a {
+            font: 400 clamp(1.5rem, 5vw, 2rem) var(--font-titles);
+        }
+
+        & .menu-close-toogle {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+        }
+    }
+}
+
 /* End about banner section */
 
 /* 

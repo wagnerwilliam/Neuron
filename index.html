@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+    <script defer src="js/index.js"></script>
     <title>Neuron</title>
 </head>
+
 <body>
 
     <!-- Header -->
     <header class="header">
         <img class="header__logo" src="media/logo-black.svg" alt="">
-        <nav class="header__menu">
+        <nav class="header__menu" id="menuNav">
             <ul>
                 <li class="header__link"><a href="#">Home</a></li>
                 <li class="header__link"><a href="services.html">Services</a></li>
                 <li class="header__link"><a href="about-us.html">About us</a></li>
                 <li class="header__link"><a href="new.html">News</a></li>
-                <li class="header__link"><a href="#prices">Price</a></li>
+                <li class="header__link"><a id="price" href="#prices">Price</a></li>
                 <li class="header__link"><a href="contact.html">Contact</a></li>
+                <li>
+                    <button onclick="hamburgerMenu()" aria-hidden="true" class="menu-close-toogle">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </li>
             </ul>
-            <span class="material-symbols-outlined">menu</span>
+            <button onclick="hamburgerMenu()" class="header-menu-toggle">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
         </nav>
     </header>
     <!-- End header -->
@@ -47,8 +57,10 @@
                 <div class="hero-text__titles">
                     <h2>A little bit about us.</h2>
                     <h4>Not enought for sure.</h4>
-                </div>  
-                <p>We are a business digitalization company that will help you get what you want: to have an online presence in front of your competition. Specialists in the field of digitization of publishers and magazines.</p>
+                </div>
+                <p>We are a business digitalization company that will help you get what you want: to have an online
+                    presence in front of your competition. Specialists in the field of digitization of publishers and
+                    magazines.</p>
                 <a class="btn" href="">More about us <span class="material-symbols-outlined">arrow_outward</span></a>
             </div>
         </div>
@@ -97,8 +109,9 @@
                 <div class="hero-text__titles">
                     <h2>We make everything easy.</h2>
                     <h4>Or so we are told</h4>
-                </div>  
-                <p>We keep the essence of your business, no worries, just ease of use, speed, and constant communication with our team of professionals. What else?</p>
+                </div>
+                <p>We keep the essence of your business, no worries, just ease of use, speed, and constant communication
+                    with our team of professionals. What else?</p>
                 <a class="btn" href="">Let me in <span class="material-symbols-outlined">arrow_outward</span></a>
             </div>
             <div class="hero-text__image">
@@ -118,12 +131,14 @@
                 <div class="services__card">
                     <img src="media/services_1.webp" alt="">
                     <h4>Web development</h4>
-                    <p>We convert your business into a fully functional and editable website, with what your business requires, fast and easy to use.</p>
+                    <p>We convert your business into a fully functional and editable website, with what your business
+                        requires, fast and easy to use.</p>
                 </div>
                 <div class="services__card">
                     <img src="media/services_2.webp" alt="">
                     <h4>App development</h4>
-                    <p>Your audience will always be on their cell phones. Why complicate things for them? Make it easy for them with a modern app.</p>
+                    <p>Your audience will always be on their cell phones. Why complicate things for them? Make it easy
+                        for them with a modern app.</p>
                 </div>
             </div>
             <a class="btn" href="#">See all services</a>
@@ -138,16 +153,23 @@
                 <div class="prices__heading">
                     <h3>Basic Plan</h3>
                     <span class="h1">99€</span>
-                    <a class="btn" href="#">Try it for free <span class="material-symbols-outlined">arrow_outward</span></a>
+                    <a class="btn" href="#">Try it for free <span
+                            class="material-symbols-outlined">arrow_outward</span></a>
                 </div>
                 <ul class="prices__list">
-                    <li class="black prices__item"><span class="material-symbols-outlined">check_circle</span> UX/UI</li>
+                    <li class="black prices__item"><span class="material-symbols-outlined">check_circle</span> UX/UI
+                    </li>
                     <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> WordPress</li>
-                    <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> Customized panel</li>
-                    <li class="prices__item red"><span class="material-symbols-outlined">cancel</span> Neuhost access</li>
-                    <li class="prices__item red"><span class="material-symbols-outlined">cancel</span> Neuron Studio</li>
-                    <li class="prices__item red"><span class="material-symbols-outlined">cancel</span> Web development</li>
-                    <li class="prices__item red"><span class="material-symbols-outlined">cancel</span> App development</li>
+                    <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> Customized
+                        panel</li>
+                    <li class="prices__item red"><span class="material-symbols-outlined">cancel</span> Neuhost access
+                    </li>
+                    <li class="prices__item red"><span class="material-symbols-outlined">cancel</span> Neuron Studio
+                    </li>
+                    <li class="prices__item red"><span class="material-symbols-outlined">cancel</span> Web development
+                    </li>
+                    <li class="prices__item red"><span class="material-symbols-outlined">cancel</span> App development
+                    </li>
                     <li class="prices__item red"><span class="material-symbols-outlined">cancel</span> SEO/SEM</li>
                 </ul>
             </div>
@@ -156,16 +178,22 @@
                 <div class="prices__heading middle_style">
                     <h3>Pro Plan</h3>
                     <span class="h1">129€</span>
-                    <a class="btn" href="#">Try it for free <span class="material-symbols-outlined">arrow_outward</span></a>
+                    <a class="btn" href="#">Try it for free <span
+                            class="material-symbols-outlined">arrow_outward</span></a>
                 </div>
                 <ul class="prices__list middle_style">
                     <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> UX/UI</li>
                     <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> WordPress</li>
-                    <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> Customized panel</li>
-                    <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> Neuhost access</li>
-                    <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> Neuron Studio</li>
-                    <li class="prices__item red"><span class="material-symbols-outlined">cancel</span> Web development</li>
-                    <li class="prices__item red"><span class="material-symbols-outlined">cancel</span> App development</li>
+                    <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> Customized
+                        panel</li>
+                    <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> Neuhost access
+                    </li>
+                    <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> Neuron Studio
+                    </li>
+                    <li class="prices__item red"><span class="material-symbols-outlined">cancel</span> Web development
+                    </li>
+                    <li class="prices__item red"><span class="material-symbols-outlined">cancel</span> App development
+                    </li>
                     <li class="prices__item red"><span class="material-symbols-outlined">cancel</span> SEO/SEM</li>
                 </ul>
             </div>
@@ -174,16 +202,22 @@
                 <div class="prices__heading">
                     <h3>Xtreme Plan</h3>
                     <span class="h1">199€</span>
-                    <a class="btn" href="#">Try it for free <span class="material-symbols-outlined">arrow_outward</span></a>
+                    <a class="btn" href="#">Try it for free <span
+                            class="material-symbols-outlined">arrow_outward</span></a>
                 </div>
                 <ul class="prices__list">
                     <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> UX/UI</li>
                     <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> WordPress</li>
-                    <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> Customized panel</li>
-                    <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> Neuhost access</li>
-                    <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> Neuron Studio</li>
-                    <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> Web development</li>
-                    <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> App development</li>
+                    <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> Customized
+                        panel</li>
+                    <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> Neuhost access
+                    </li>
+                    <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> Neuron Studio
+                    </li>
+                    <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> Web development
+                    </li>
+                    <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> App development
+                    </li>
                     <li class="prices__item"><span class="material-symbols-outlined">check_circle</span> SEO/SEM</li>
                 </ul>
             </div>
@@ -195,7 +229,10 @@
     <section class="section contact">
         <div class="container contact__block">
             <div class="contact__map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22031.07255150544!2d-0.39072722140135485!3d39.48714392430556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f4ea7d4e61b%3A0x1243035689245d8d!2sMercado%20Central%20de%20Valencia!5e0!3m2!1ses!2ses!4v1770633661958!5m2!1ses!2ses" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22031.07255150544!2d-0.39072722140135485!3d39.48714392430556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f4ea7d4e61b%3A0x1243035689245d8d!2sMercado%20Central%20de%20Valencia!5e0!3m2!1ses!2ses!4v1770633661958!5m2!1ses!2ses"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
             <div class="contact__content">
@@ -216,7 +253,7 @@
 
                     <label for="email" style="display: none;"></label>
                     <input type="email" placeholder="E-mail" id="email" name="email">
-                    
+
                     <label for="services" style="display: none;"></label>
                     <select name="services" id="services">
                         <option value="1" selected disabled>Select the service</option>
@@ -242,7 +279,7 @@
             <div class="heading">
                 <h2>Latest post</h2>
                 <a class="btn" href="#">
-                    Go read all our posts 
+                    Go read all our posts
                     <span class="material-symbols-outlined">arrow_outward</span>
                 </a>
             </div>
@@ -251,21 +288,24 @@
                 <div class="lastest-section__card">
                     <img src="media/rectangle_10.png" alt="">
                     <h4>The Ultimate Guide to Digital Transformation for Small...</h4>
-                    <p>Embracing digital transformation is essential for small businesses seeking growth and resilience...</p>
+                    <p>Embracing digital transformation is essential for small businesses seeking growth and
+                        resilience...</p>
                     <a href="#" class="link">Read more</a>
                 </div>
 
                 <div class="lastest-section__card">
                     <img src="media/rectangle_11.png" alt="">
                     <h4>Why Cloud Solutions Are the Backbone of Modern Enterprises</h4>
-                    <p>Cloud technologies offer flexibility, security, and scalability for all types of organizations. Learn how cloud solutions...</p>
+                    <p>Cloud technologies offer flexibility, security, and scalability for all types of organizations.
+                        Learn how cloud solutions...</p>
                     <a href="#" class="link">Read more</a>
                 </div>
 
                 <div class="lastest-section__card">
                     <img src="media/rectangle_12.png" alt="">
                     <h4>Automate to Innovate: How Workflow Automation Boosts...</h4>
-                    <p>Implementing workflow automation helps eliminate repetitive tasks and human error. Explore key automation tools and...</p>
+                    <p>Implementing workflow automation helps eliminate repetitive tasks and human error. Explore key
+                        automation tools and...</p>
                     <a href="#" class="link">Read more</a>
                 </div>
             </div>
@@ -298,4 +338,5 @@
     <!-- End Footer -->
 
 </body>
+
 </html>
